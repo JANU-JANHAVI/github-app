@@ -10,22 +10,22 @@ import { environment } from '../environments/environment';
 })
 export class ApiService {
 
-  apiEndpoint = environment.apiEndpoint;
+  apiEndpoint = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   httpGet(url: string): Observable<any>{
-   return this.http.get(this.apiEndpoint+url);
+   return this.http.get(this.apiUrl+url);
   }
 
   httpPost(url: string, body: any): Observable<any>{
-    return this.http.post(this.apiEndpoint+url, body);
+    return this.http.post(this.apiUrl+url, body);
    }
 
   httpDelete(url: string, body: any): Observable<any>{
-    return this.http.delete(this.apiEndpoint+url, body);
+    return this.http.delete(this.apiUrl+url, body);
    }
 
    httpPut(url: string, body: any): Observable<any>{
-    return this.http.put(this.apiEndpoint+url, body);
+    return this.http.put(this.apiUrl+url, body);
    }
 }
